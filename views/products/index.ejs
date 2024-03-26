@@ -1,0 +1,192 @@
+<% layout("./layouts/boilerplate.ejs") %>
+
+<main>
+  <div class="hero-page">
+    <div class="category">
+      <a href="/product/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Grocery</p>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Mobiles</p>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="	https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Fashion</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Electronics</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="	https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100"
+            alt=""
+          />
+          <span>
+            <p>Home & Furniture</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0139228b2f7eb413.jpg?q=100"
+            alt=""
+          />
+          <span>
+            <p>Appliances</p>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Travel</p>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Beauty & Toys</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+      </a>
+      <a href="/">
+        <div class="cate-box">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100"
+            alt=""
+          />
+          <span>
+            <p>Two Wheelers</p>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/fcc4d79bab4e322e.jpg?q=20"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/68959fd7d83448b8.png?q=20"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/59b4f0a4692fc280.png?q=20"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/440bf37588e0418e.png?q=20"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="product-elect">
+      <a href="/">
+        <div class="elect-title">
+          <h2>Best of Electronics</h2>
+          <span><i class="fa-solid fa-angle-right"></i></span></div
+      ></a>
+      <div class="elect-cards">
+        <% for(product of allProduct){ %> <%
+        if(product.category==="electronics") { %>
+        <a href="/product/<%= product.category %>">
+          <div class="elect-card">
+            <div class="card-img">
+              <img src="<%= product.imageUrl %>" alt="" />
+            </div>
+            <div class="card-text">
+              <p><%= product.name %></p>
+              <h4>From ₹<%= product.price %></h4>
+            </div>
+          </div>
+        </a>
+        <% } %> <% } %>
+      </div>
+    </div>
+
+    <div class="product-elect">
+      <a href="/">
+        <div class="elect-title">
+          <h2>Best of Electronics</h2>
+          <span><i class="fa-solid fa-angle-right"></i></span></div
+      ></a>
+      <div class="elect-cards">
+        <% for(product of allProduct){ %> <% if(product.category==="clothing") {
+        %>
+        <a href="/product/<%= product.category %>">
+          <div class="elect-card">
+            <div class="card-img">
+              <img src="<%= product.imageUrl %>" alt="" />
+            </div>
+            <div class="card-text">
+              <p><%= product.name %></p>
+              <h4>From ₹<%= product.price %></h4>
+            </div>
+          </div>
+        </a>
+        <% } %> <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-page2"></div>
+</main>
