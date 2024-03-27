@@ -24,6 +24,7 @@ app.engine("ejs", engine);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('app/public'));
 
 app.get("/", (req, res) => {
   res.send("i am root page");
@@ -38,7 +39,7 @@ app.get("/product/:category", async (req, res) => {
   let { category } = req.params;
   const categoryProducts = await Product.find({ category: category });
   console.log(categoryProducts);
-  // let allProduct = await Product.find({});
+  let allProduct = await Product.find({});
   res.render("products/product", { categoryProducts });
 });
 
